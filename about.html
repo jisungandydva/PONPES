@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About - MySchool Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="about-page">
+
+  <!-- Header -->
+  <header id="header">
+    <!-- Baris Atas -->
+    <div class="top-header d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="assets/img/ponpes.png" alt="Logo" class="me-2" style="height:90px;">
+        <h2 class="mb-0 text-white">PONDOK PESANTREN<br><strong>SIROJAN MUNIRO</strong></h2>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="me-4 text-white small">
+          <strong>CONTACT US</strong><br>
+          Tlp: <a href="tel:081329039527" class="text-white">081329039527</a>
+        </div>
+        <div class="me-4 text-white small">
+          <strong>E-MAIL</strong><br>
+          <a href="mailto:sirojanmuniroassalam@gmail.com" class="text-white">sirojanmuniroassalam@gmail.com</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA"><i class="bi bi-youtube text-white fs-5 me-2"></i></a>
+          <a href="https://www.facebook.com/Sirojanmuniroassalam"><i class="bi bi-facebook text-white fs-5 me-2"></i></a>
+          <a href="https://www.instagram.com/sirojanmuniro_assalam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram text-white fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Baris Menu -->
+    <div class="nav-header">
+      <!-- Desktop Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="ngaji.html">Playlist</a></li>
+          <li><a href="online.html">Al-Qur'an</a></li>
+          <li><a href="galery.html">Galeri</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" onclick="openMobileMenu()">
+        ≡ Menu
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu(event)">
+    <div class="mobile-menu-content" onclick="event.stopPropagation()">
+      <!-- Menu Header -->
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu Navigasi</span>
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">&times;</button>
+      </div>
+      
+      <!-- Menu Items -->
+      <div class="mobile-menu-items">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="ngaji.html">Playlist</a>
+        <a href="online.html">Al-Qur'an</a>
+        <a href="galery.html">Galeri</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol WhatsApp -->
+  <a href="https://wa.me/6281329039527" target="_blank" class="wa-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 class="heading-title">Tentang Kami</h1>
+              <p class="mb-0">
+                Pondok Pesantren SIROJAN MUNIRO berkomitmen mencetak generasi
+                berakhlakul karimah, cerdas, dan mandiri, dengan tetap menjaga
+                tradisi keilmuan Islam yang mulia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!-- Sejarah Section -->
+    <section id="history" class="history section">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="img-hover-effect position-relative">
+              <img src="assets/img/education/ponpes (12).webp" 
+                   alt="Pondok Pesantren"
+                   class="img-fluid rounded shadow"
+                   style="height: 380px; width: 100%; object-fit: cover; transition: filter 0.4s ease, box-shadow 0.4s ease;">
+              <div class="position-absolute top-0 start-0 bg-primary text-white p-3 rounded-end">
+                <i class="fas fa-mosque fa-2x"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="section-heading">Visi & Misi</h3>
+            <div class="mb-4">
+              <h5 class="text-primary mb-3"><i class="fas fa-eye me-2"></i>Visi</h5>
+              <p class="ps-4">Menjadi Pondok Pesantren yang Rahmatan lil 'Alamin, yang membawa rahmat, kedamaian, dan manfaat bagi seluruh alam.</p>
+            </div>
+            <div>
+              <h5 class="text-primary mb-3"><i class="fas fa-bullseye me-2"></i>Misi</h5>
+              <ul class="ps-4">
+                <li class="mb-2">Menuntun santri menjadi manusia yang beradab, berakhlak mulia, berdasarkan Al-Qur'an dan hadits.</li>
+                <li class="mb-2">Mendidik santri menjadi manusia yang bermanfaat, melalui ilmu, amal, dan keterampilan yang membawa kebaikan bagi umat.</li>
+                <li class="mb-2">Memanusiakan manusia, dengan menanamkan nilai kasih sayang, kepada semua manusia tanpa membedakan Suku, agama, Ras dan Antar Golongan.</li>
+                <li class="mb-2">Membumikan sholawat, dengan menumbuhkan cinta Rasulullah ﷺ melalui Majlis sholawat dan keteladanan akhlak Nabi.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nilai-Nilai Section -->
+    <section class="values-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-heading">Nilai Inti Pesantren</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="value-block text-center p-4 h-100">
+              <div class="value-number">01</div>
+              <h3><i class="fas fa-heart me-2"></i>Keikhlasan</h3>
+              <p>Seluruh amal ibadah dan pembelajaran dilandasi niat karena Allah semata.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-block text-center p-4 h-100">
+              <div class="value-number">02</div>
+              <h3><i class="fas fa-clock me-2"></i>Kedisiplinan</h3>
+              <p>Membentuk santri yang tertib, tekun, dan menghargai waktu.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-block text-center p-4 h-100">
+              <div class="value-number">03</div>
+              <h3><i class="fas fa-user-graduate me-2"></i>Kemandirian</h3>
+              <p>Menyiapkan santri agar mampu hidup mandiri dan bermanfaat bagi masyarakat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper bg-light">
+      <section class="content py-5">
+        <div class="container">
+          
+          <!-- Judul Halaman -->
+          <h2 class="text-center mb-5 fw-bold">
+            <i class="fas fa-mosque text-success"></i> Pendiri Pondok Pesantren
+          </h2>
+
+          <!-- Pimpinan Pondok -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-6 col-lg-4 text-center">
+              <div class="card border-0 shadow-lg rounded-4 p-3 bg-white">
+                <img src="assets/img/guru/pimpinan_pondok.webp" 
+                     alt="KH. Ahmad Zainuddin" 
+                     class="rounded-4 shadow-sm mb-3 mx-auto"
+                     style="width:220px; height:260px; object-fit:cover; border:4px solid #198754;">
+                <div class="card-body">
+                  <h4 class="fw-bold text-success mb-1">Fahrudi irmansah</h4>
+                  <p class="text-muted mb-0">Pimpinan Pondok</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Garis Pemisah -->
+          <hr class="my-5" style="border-top: 3px dashed #198754; width: 60%; margin: auto;">
+
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer pt-5" style="background-color:#004d3c; color:white; margin:0; padding:0; overflow:hidden;">
+    <div class="container">
+      <div class="row gy-4 align-items-stretch">
+
+        <!-- Kolom Kiri: Logo & Sosial Media -->
+        <div class="col-lg-6 col-md-12 d-flex flex-column align-items-center text-center">
+          <!-- Logo di atas -->
+          <img src="assets/img/ponpes.png" alt="Logo" style="height:90px; margin-bottom:10px;">
+
+          <!-- Tulisan Pondok di bawah logo -->
+          <h4 class="fw-bold mb-3 text-uppercase text-white">
+            PONDOK PESANTREN <br> SUROJAN MUNIRO
+          </h4>
+
+          <!-- Sosial Media -->
+          <div class="social-links d-flex gap-3 justify-content-center">
+            <a href="https://www.facebook.com/Sirojanmuniroassalam" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.instagram.com/sirojanmuniro_assalam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Lokasi / Maps -->
+        <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
+          <h5 class="mb-3 fw-semibold text-white text-center text-lg-start">📍 Lokasi Pondok</h5>
+          <div class="map-container" style="width:100%; height:100%; min-height:220px; border-radius:8px; overflow:hidden;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d395.06453246942604!2d112.681!3d-8.0725068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd627bef4d003e5%3A0xdd0f4efe70debf25!2sPondok+Pesantren+Sirojan+Muniro+As-Salam!5e0!3m2!1sid!2sid!4v1699999999999"
+              style="width:100%; height:100%; border:0;"
+              allowfullscreen=""
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>
+        © 2025 <strong>Pondok Pesantren Sirojan Muniro As-Salam Reborn</strong>. All rights reserved.
+        <br>
+        Dibangun dengan <span class="heart">❤</span> oleh 
+        <a href="https://azkaindiesatu.id/" target="_blank" class="footer-link">AIS</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    // Buka Mobile Menu
+    function openMobileMenu() {
+      document.getElementById('mobileMenuOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Tutup Mobile Menu
+    function closeMobileMenu(event) {
+      if (event && event.target !== document.getElementById('mobileMenuOverlay')) {
+        return;
+      }
+      
+      document.getElementById('mobileMenuOverlay').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close menu when clicking on menu links
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuLinks = document.querySelectorAll('.mobile-menu-items a:not(.mobile-dropdown-header)');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+      
+      // Also close when clicking on dropdown items
+      const dropdownLinks = document.querySelectorAll('.mobile-dropdown-content a');
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>

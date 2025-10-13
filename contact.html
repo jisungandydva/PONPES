@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - MySchool Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="contact-page">
+
+  <!-- Header -->
+  <header id="header">
+    <!-- Baris Atas -->
+    <div class="top-header d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="assets/img/ponpes.png" alt="Logo" class="me-2" style="height:90px;">
+        <h2 class="mb-0 text-white">PONDOK PESANTREN<br><strong>SIROJAN MUNIRO</strong></h2>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="me-4 text-white small">
+          <strong>CONTACT US</strong><br>
+          Tlp: <a href="tel:081329039527" class="text-white">081329039527</a>
+        </div>
+        <div class="me-4 text-white small">
+          <strong>E-MAIL</strong><br>
+          <a href="mailto:sirojanmuniroassalam@gmail.com" class="text-white">sirojanmuniroassalam@gmail.com</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA"><i class="bi bi-youtube text-white fs-5 me-2"></i></a>
+          <a href="https://www.facebook.com/Sirojanmuniroassalam"><i class="bi bi-facebook text-white fs-5 me-2"></i></a>
+          <a href="https://www.instagram.com/sirojanmuniro_assalam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram text-white fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Baris Menu -->
+    <div class="nav-header">
+      <!-- Desktop Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ngaji.html">Playlist</a></li>
+          <li><a href="online.html">Al-Qur'an</a></li>
+          <li><a href="galery.html">Galeri</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" onclick="openMobileMenu()">
+        ≡ Menu
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu(event)">
+    <div class="mobile-menu-content" onclick="event.stopPropagation()">
+      <!-- Menu Header -->
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu Navigasi</span>
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">&times;</button>
+      </div>
+      
+      <!-- Menu Items -->
+      <div class="mobile-menu-items">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="ngaji.html">Playlist</a>
+        <a href="online.html">Al-Qur'an</a>
+        <a href="galery.html">Galeri</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol WhatsApp -->
+  <a href="https://wa.me/6281329039527" target="_blank" class="wa-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Section Hubungi Kami -->
+    <div class="container my-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Hubungi Kami</h2>
+        <p class="text-muted">Pilih cara termudah untuk terhubung dengan kami</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-3">
+          <a href="https://www.instagram.com/sirojanmuniro_assalam" target="_blank" class="contact-card">
+            <i class="fab fa-instagram"></i>
+            <h5>Instagram</h5>
+            <p>DM langsung di akun resmi</p>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://www.facebook.com/Sirojanmuniroassalam" target="_blank" class="contact-card">
+            <i class="fab fa-facebook-f"></i>
+            <h5>Facebook</h5>
+            <p>Ikuti dan kirim pesan</p>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA" target="_blank" class="contact-card">
+            <i class="fab fa-youtube"></i>
+            <h5>YouTube</h5>
+            <p>Tonton & komentar video kami</p>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://wa.me/6281329039527" target="_blank" class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <h5>WhatsApp</h5>
+            <p>Kirim pesan cepat</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer pt-5" style="background-color:#004d3c; color:white; margin:0; padding:0; overflow:hidden;">
+    <div class="container">
+      <div class="row gy-4 align-items-stretch">
+
+        <!-- Kolom Kiri: Logo & Sosial Media -->
+        <div class="col-lg-6 col-md-12 d-flex flex-column align-items-center text-center">
+          <!-- Logo di atas -->
+          <img src="assets/img/ponpes.png" alt="Logo" style="height:90px; margin-bottom:10px;">
+
+          <!-- Tulisan Pondok di bawah logo -->
+          <h4 class="fw-bold mb-3 text-uppercase text-white">
+            PONDOK PESANTREN <br> SUROJAN MUNIRO
+          </h4>
+
+          <!-- Sosial Media -->
+          <div class="social-links d-flex gap-3 justify-content-center">
+            <a href="https://www.facebook.com/Sirojanmuniroassalam" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.instagram.com/sirojanmuniro_assalam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Lokasi / Maps -->
+        <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
+          <h5 class="mb-3 fw-semibold text-white text-center text-lg-start">📍 Lokasi Pondok</h5>
+          <div class="map-container" style="width:100%; height:100%; min-height:220px; border-radius:8px; overflow:hidden;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d395.06453246942604!2d112.681!3d-8.0725068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd627bef4d003e5%3A0xdd0f4efe70debf25!2sPondok+Pesantren+Sirojan+Muniro+As-Salam!5e0!3m2!1sid!2sid!4v1699999999999"
+              style="width:100%; height:100%; border:0;"
+              allowfullscreen=""
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>
+        © 2025 <strong>Pondok Pesantren Sirojan Muniro As-Salam Reborn</strong>. All rights reserved.
+        <br>
+        Dibangun dengan <span class="heart">❤</span> oleh 
+        <a href="https://azkaindiesatu.id/" target="_blank" class="footer-link">AIS</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    // Buka Mobile Menu
+    function openMobileMenu() {
+      document.getElementById('mobileMenuOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Tutup Mobile Menu
+    function closeMobileMenu(event) {
+      if (event && event.target !== document.getElementById('mobileMenuOverlay')) {
+        return;
+      }
+      
+      document.getElementById('mobileMenuOverlay').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Toggle Dropdown dalam Mobile Menu
+    function toggleMobileDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      const dropdownArrow = document.getElementById('dropdownArrow');
+      
+      if (dropdownContent.classList.contains('active')) {
+        dropdownContent.classList.remove('active');
+        dropdownArrow.textContent = '▼';
+      } else {
+        dropdownContent.classList.add('active');
+        dropdownArrow.textContent = '▲';
+      }
+    }
+
+    // Close menu when clicking on menu links
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuLinks = document.querySelectorAll('.mobile-menu-items a:not(.mobile-dropdown-header)');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+      
+      // Also close when clicking on dropdown items
+      const dropdownLinks = document.querySelectorAll('.mobile-dropdown-content a');
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Playlist Video - Pondok Pesantren Sirojan Muniro</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for WhatsApp Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/ngaji.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="top-header">
+      <div class="d-flex align-items-center">
+        <img src="assets/img/ponpes.png" alt="Logo" style="height:90px; margin-right:10px;">
+        <h2>PONDOK PESANTREN<br><strong>SIROJAN MUNIRO</strong></h2>
+      </div>
+      <div style="display:flex; align-items:center; gap:20px;">
+        <div class="small">
+          <strong>CONTACT US</strong><br>
+          <a href="tel:081329039527">Tlp: 081329039527</a>
+        </div>
+        <div class="small">
+          <strong>E-MAIL</strong><br>
+          <a href="mailto:sirojanmuniroassalam@gmail.com">sirojanmuniroassalam@gmail.com</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA"><i class="bi bi-youtube fs-5 me-2"></i></a>
+          <a href="https://www.facebook.com/Sirojanmuniroassalam"><i class="bi bi-facebook fs-5 me-2"></i></a>
+          <a href="https://www.instagram.com/sirojanmuniro_assalam"><i class="bi bi-instagram fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="nav-header">
+      <nav class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ngaji.html" class="active">Playlist</a></li>
+          <li><a href="online.html">Al-Qur'an</a></li>
+          <li><a href="galery.html">Galeri</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" onclick="openMobileMenu()">≡ Menu</button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu(event)">
+    <div class="mobile-menu-content" onclick="event.stopPropagation()">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu Navigasi</span>
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">&times;</button>
+      </div>
+      <div class="mobile-menu-items">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="ngaji.html" class="active">Playlist</a>
+        <a href="online.html">Al-Qur'an</a>
+        <a href="galery.html">Galeri</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/6281329039527" target="_blank" class="wa-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Controls -->
+    <div class="controls">
+      <div class="control-group">
+        <button id="loadBtn" class="primary-btn" onclick="loadVideos()">
+          <span id="loadBtnText">🔄 Muat Video Terbaru</span>
+          <span id="loadBtnSpinner" class="spinner hidden"></span>
+        </button>
+        <button class="primary-btn" onclick="toggleAutoRefresh()" id="autoRefreshBtn">
+          ⏰ Auto Refresh (2 menit)
+        </button>
+        <input type="text" id="searchInput" placeholder="🔍 Cari video..." class="search-input">
+      </div>
+      
+      <div class="control-group">
+        <button class="filter-btn active" onclick="filterVideos('all', this)">📺 Semua Video</button>
+        <button class="filter-btn" onclick="filterVideos('today', this)">🕐 Hari Ini</button>
+        <button class="filter-btn" onclick="filterVideos('week', this)">📅 Seminggu Terakhir</button>
+        <button class="filter-btn" onclick="filterVideos('month', this)">📆 Bulan Ini</button>
+      </div>
+    </div>
+
+    <!-- Status Message -->
+    <div id="statusMessage" class="status"></div>
+
+    <!-- Statistics -->
+    <div id="statsSection" class="stats">
+      <div class="stat-item">
+        <div class="stat-number" id="totalVideos">0</div>
+        <div class="stat-label">Total Video</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="newVideos">0</div>
+        <div class="stat-label">Video Baru (3 hari)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="weekVideos">0</div>
+        <div class="stat-label">Video Seminggu</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="lastUpdate">-</div>
+        <div class="stat-label">Update Terakhir</div>
+      </div>
+    </div>
+
+    <!-- Video Grid -->
+    <div id="videoGrid" class="video-grid">
+      <div class="empty-state">
+        <div class="empty-state-icon">📺</div>
+        <p>Klik "Muat Video Terbaru" untuk memulai</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="assets/js/ngaji.js"></script>
+</body>
+</html>
