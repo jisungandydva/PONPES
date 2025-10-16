@@ -31,159 +31,6 @@
 
   <!-- Gallery Custom CSS -->
   <link href="assets/css/gallery.css" rel="stylesheet">
-
-  <!-- MOBILE MENU CSS FIX -->
-  <style>
-    /* ===== MOBILE MENU BUTTON ===== */
-    .mobile-menu-btn {
-      display: none !important;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-      padding: 8px 12px;
-      z-index: 1100;
-      font-weight: bold;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-
-    .mobile-menu-btn:focus {
-      outline: none;
-    }
-
-    .mobile-menu-btn:hover {
-      color: #fbbf24;
-    }
-
-    /* Show on mobile - CRITICAL */
-    @media (max-width: 992px) {
-      .mobile-menu-btn {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-
-      #navmenu {
-        display: none !important;
-      }
-
-      .navmenu {
-        display: none !important;
-      }
-    }
-
-    /* ===== MOBILE MENU OVERLAY ===== */
-    .mobile-menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1099;
-      display: none !important;
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-
-    .mobile-menu-overlay.active {
-      display: flex !important;
-    }
-
-    /* ===== MOBILE MENU CONTENT ===== */
-    .mobile-menu-content {
-      background-color: #065f46;
-      width: 280px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-      z-index: 1100;
-      overflow-y: auto;
-      animation: slideInLeft 0.3s ease-out;
-    }
-
-    @keyframes slideInLeft {
-      from {
-        transform: translateX(-100%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-
-    /* ===== MOBILE MENU HEADER ===== */
-    .mobile-menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      background-color: #004d3c;
-    }
-
-    .mobile-menu-title {
-      color: white;
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .mobile-menu-close {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
-      padding: 0;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      transition: transform 0.2s;
-    }
-
-    .mobile-menu-close:hover {
-      transform: scale(1.2);
-      color: #fbbf24;
-    }
-
-    /* ===== MOBILE MENU ITEMS ===== */
-    .mobile-menu-items {
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-      flex: 1;
-    }
-
-    .mobile-menu-items a {
-      color: white;
-      text-decoration: none;
-      padding: 15px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.2s;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .mobile-menu-items a:hover,
-    .mobile-menu-items a.active {
-      background-color: rgba(255, 255, 255, 0.15);
-      padding-left: 25px;
-      color: #fbbf24;
-    }
-
-    /* ===== DESKTOP - HIDE MOBILE MENU ===== */
-    @media (min-width: 993px) {
-      .mobile-menu-btn,
-      .mobile-menu-overlay {
-        display: none !important;
-      }
-    }
-  </style>
 </head>
 
 <body class="gallery-page">
@@ -214,7 +61,7 @@
     </div>
     
     <!-- Baris Menu -->
-    <div class="nav-header d-flex justify-content-between align-items-center">
+    <div class="nav-header">
       <!-- Desktop Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -228,7 +75,7 @@
       </nav>
       
       <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" onclick="openMobileMenu()" type="button">
+      <button class="mobile-menu-btn" onclick="openMobileMenu()">
         ≡ Menu
       </button>
     </div>
@@ -240,7 +87,7 @@
       <!-- Menu Header -->
       <div class="mobile-menu-header">
         <span class="mobile-menu-title">Menu Navigasi</span>
-        <button class="mobile-menu-close" onclick="closeMobileMenu()" type="button">&times;</button>
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">&times;</button>
       </div>
       
       <!-- Menu Items -->
@@ -394,48 +241,6 @@
 
   <!-- Gallery JS File -->
   <script src="assets/js/gallery.js"></script>
-
-  <!-- MOBILE MENU SCRIPT -->
-  <script>
-    // Buka Mobile Menu
-    function openMobileMenu() {
-      const overlay = document.getElementById('mobileMenuOverlay');
-      if (overlay) {
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
-    // Tutup Mobile Menu
-    function closeMobileMenu(event) {
-      if (event && event.target !== document.getElementById('mobileMenuOverlay')) {
-        return;
-      }
-      
-      const overlay = document.getElementById('mobileMenuOverlay');
-      if (overlay) {
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    }
-
-    // Close menu when clicking on menu links
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuLinks = document.querySelectorAll('.mobile-menu-items a');
-      menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          closeMobileMenu();
-        });
-      });
-
-      // Close menu on ESC key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          closeMobileMenu();
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>

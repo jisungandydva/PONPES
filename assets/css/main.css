@@ -9574,13 +9574,29 @@ body {
   }
 }
 
-/* Mobile Hamburger Menu Button - Hidden by default */
+/* MENJADI INI */
 .mobile-menu-btn {
   display: none;
 }
 
-.mobile-menu-overlay {
-  display: none;
+@media (max-width: 992px) {
+  .mobile-menu-btn {
+    display: block !important;
+  }
+  
+  .navmenu {
+    display: none !important;
+  }
+}
+
+@media (min-width: 993px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+  
+  .navmenu {
+    display: block;
+  }
 }
 
 /* Media Queries untuk Mobile */
