@@ -9616,22 +9616,23 @@ body {
     display: block !important;
   }
 
-  /* 🔹 Perbaikan utama: menu muncul dari kiri, bukan kanan */
-  .mobile-menu-content {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important; /* ubah dari right ke left */
-    width: 280px !important;
-    height: 100% !important;
-    background: #065f46 !important;
-    transform: translateX(-100%) !important; /* ubah arah slide */
-    transition: transform 0.3s ease !important;
-    overflow-y: auto !important;
-  }
+  /* 🔹 Menu muncul dari kanan */
+.mobile-menu-content {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important; /* ubah dari left ke right */
+  width: 280px !important;
+  height: 100% !important;
+  background: #065f46 !important;
+  transform: translateX(100%) !important; /* sembunyikan ke kanan */
+  transition: transform 0.3s ease !important;
+  overflow-y: auto !important;
+}
 
-  .mobile-menu-overlay.active .mobile-menu-content {
-    transform: translateX(0) !important; /* muncul ke layar dari kiri */
-  }
+.mobile-menu-overlay.active .mobile-menu-content {
+  transform: translateX(0) !important; /* muncul ke layar dari kanan */
+}
+
 
   /* Header menu mobile */
   .mobile-menu-header {
