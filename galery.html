@@ -1,71 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Gallery - MySchool Bootstrap Template</title>
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- Gallery Custom CSS -->
-  <link href="assets/css/gallery.css" rel="stylesheet">
-
-  <!-- MOBILE MENU FIX CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Mobile Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <style>
-    /* ===== RESET Z-INDEX CONFLICTS ===== */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
     header {
-      z-index: 100 !important;
-    }
-
-    .nav-header {
+      background-color: #065f46;
+      padding: 20px;
       position: relative;
-      z-index: 101 !important;
+      z-index: 100;
     }
 
-    /* ===== MOBILE MENU BUTTON ===== */
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #004d3c;
+      padding: 15px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #fbbf24;
+    }
+
+    /* ===== MOBILE MENU BUTTON - CRITICAL STYLES ===== */
     .mobile-menu-btn {
-      display: none !important;
+      display: none;
       background: none;
-      border: none;
+      border: 2px solid white;
       color: white;
       font-size: 24px;
       cursor: pointer;
-      padding: 10px 15px;
-      z-index: 1100 !important;
+      padding: 8px 12px;
+      border-radius: 4px;
       position: relative;
+      z-index: 1200;
     }
 
+    .mobile-menu-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-btn:active,
     .mobile-menu-btn:focus {
       outline: none;
     }
 
-    /* ===== SHOW BUTTON ON MOBILE ===== */
-    @media (max-width: 992px) {
+    /* Show on mobile */
+    @media (max-width: 768px) {
       .mobile-menu-btn {
         display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
 
-      .navmenu {
+      nav {
+        display: none !important;
+      }
+
+      nav ul {
         display: none !important;
       }
     }
@@ -75,56 +90,64 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1099 !important;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1199;
       display: none;
+      align-items: flex-start;
     }
 
     .mobile-menu-overlay.active {
       display: flex !important;
-      align-items: flex-start;
-      justify-content: flex-start;
     }
 
     /* ===== MOBILE MENU CONTENT ===== */
     .mobile-menu-content {
       background-color: #065f46;
-      width: 280px;
-      height: 100%;
+      width: 100%;
+      max-width: 300px;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
       overflow-y: auto;
-      z-index: 1100 !important;
+      z-index: 1200;
+      animation: slideIn 0.3s ease-out;
     }
 
-    /* ===== MOBILE MENU HEADER ===== */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
     .mobile-menu-header {
+      background-color: #004d3c;
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      background-color: #004d3c;
+      border-bottom: 2px solid #065f46;
     }
 
     .mobile-menu-title {
       color: white;
-      font-weight: 600;
-      font-size: 16px;
+      font-weight: bold;
+      font-size: 18px;
     }
 
     .mobile-menu-close {
       background: none;
       border: none;
       color: white;
-      font-size: 32px;
+      font-size: 36px;
       cursor: pointer;
       padding: 0;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -132,301 +155,231 @@
     }
 
     .mobile-menu-close:hover {
-      transform: scale(1.2);
+      color: #fbbf24;
     }
 
-    /* ===== MOBILE MENU ITEMS ===== */
     .mobile-menu-items {
       display: flex;
       flex-direction: column;
       padding: 0;
-      flex: 1;
     }
 
     .mobile-menu-items a {
       color: white;
       text-decoration: none;
-      padding: 16px 20px;
+      padding: 18px 20px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.2s ease;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 500;
+      transition: all 0.2s;
     }
 
     .mobile-menu-items a:hover,
     .mobile-menu-items a.active {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(255, 255, 255, 0.2);
       padding-left: 30px;
+      color: #fbbf24;
     }
 
-    /* ===== HIDE DESKTOP MENU ON MOBILE ===== */
-    @media (max-width: 992px) {
-      .navmenu {
-        display: none !important;
-      }
+    /* Main content */
+    .container {
+      padding: 40px 20px;
     }
 
-    @media (min-width: 993px) {
-      .mobile-menu-btn,
-      .mobile-menu-overlay {
-        display: none !important;
-      }
+    .debug-section {
+      background: #f5f5f5;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border-left: 4px solid #065f46;
+    }
+
+    .debug-section code {
+      background: white;
+      padding: 10px;
+      border-radius: 4px;
+      display: block;
+      margin-top: 10px;
+      overflow-x: auto;
+    }
+
+    button.test-btn {
+      background-color: #065f46;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button.test-btn:hover {
+      background-color: #004d3c;
     }
   </style>
 </head>
-
-<body class="gallery-page">
+<body>
 
   <!-- Header -->
   <header id="header">
-    <!-- Baris Atas -->
-    <div class="top-header d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <img src="assets/img/ponpes.png" alt="Logo" class="me-2" style="height:90px;">
-        <h2 class="mb-0 text-white">PONDOK PESANTREN<br><strong>SIROJAN MUNIRO</strong></h2>
-      </div>
-      <div class="d-flex align-items-center" style="flex: 1; justify-content: flex-end;">
-        <div class="me-4 text-white small">
-          <strong>CONTACT US</strong><br>
-          Tlp: <a href="tel:081329039527" class="text-white">081329039527</a>
-        </div>
-        <div class="me-4 text-white small">
-          <strong>E-MAIL</strong><br>
-          <a href="mailto:sirojanmuniroassalam@gmail.com" class="text-white">sirojanmuniroassalam@gmail.com</a>
-        </div>
-        <div class="social-links" style="display: none;">
-          <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA"><i class="bi bi-youtube text-white fs-5 me-2"></i></a>
-          <a href="https://www.facebook.com/Sirojanmuniroassalam"><i class="bi bi-facebook text-white fs-5 me-2"></i></a>
-          <a href="https://www.instagram.com/sirojanmuniro_assalam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram text-white fs-5"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Baris Menu -->
-    <div class="nav-header d-flex justify-content-between align-items-center">
-      <!-- Desktop Menu -->
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="Ngaji.html">Playlist</a></li>
-          <li><a href="online.html">Al-Qur'an</a></li>
-          <li><a href="galery.html" class="active">Galeri</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" onclick="openMobileMenu()" type="button">
-        ≡ Menu
-      </button>
-    </div>
+    <h2 style="color: white; margin: 0; font-size: 20px;">📱 TEST MOBILE MENU</h2>
   </header>
+
+  <!-- Navigation -->
+  <div class="nav-container">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="menuBtn" onclick="openMobileMenu()" type="button">
+      ☰ MENU
+    </button>
+  </div>
 
   <!-- Mobile Menu Overlay -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu(event)">
     <div class="mobile-menu-content" onclick="event.stopPropagation()">
-      <!-- Menu Header -->
       <div class="mobile-menu-header">
-        <span class="mobile-menu-title">Menu Navigasi</span>
-        <button class="mobile-menu-close" onclick="closeMobileMenu()" type="button">&times;</button>
+        <span class="mobile-menu-title">Navigasi</span>
+        <button class="mobile-menu-close" onclick="closeMobileMenu()" type="button">✕</button>
       </div>
-
-      <!-- Menu Items -->
       <div class="mobile-menu-items">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="Ngaji.html">Playlist</a>
-        <a href="online.html">Al-Qur'an</a>
-        <a href="galery.html" class="active">Galeri</a>
-        <a href="contact.html">Contact</a>
+        <a href="#home" onclick="closeMobileMenu()">Home</a>
+        <a href="#about" onclick="closeMobileMenu()">About</a>
+        <a href="#services" onclick="closeMobileMenu()">Services</a>
+        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
       </div>
     </div>
   </div>
 
-  <!-- Tombol WhatsApp -->
-  <a href="https://wa.me/6281329039527" target="_blank" class="wa-float">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
   <!-- Main Content -->
-  <main class="main">
-    <!-- Page Title -->
-    <div class="container py-5">
-      <h2 class="mb-4 text-center">Galeri Foto</h2>
+  <main class="container">
+    <h1>📋 Debug Mobile Menu - Test Page</h1>
 
-      <!-- Foto Gallery -->
-      <div class="row g-3">
-        <div class="col-md-4 col-sm-6">
-          <div class="gallery-card-wrapper">
-            <div class="gallery-image-container">
-              <img src="assets/img/education/ponpes (16).webp"
-                class="gallery-image"
-                alt="Peringatan Maulid Nabi Muhammad SAW"
-                onclick="openImageModal('assets/img/education/ponpes (16).jpeg', 'Peringatan Maulid Nabi Muhammad SAW', 'Kegiatan Hari Besar Islam (PHBI)')">
-            </div>
-            <div class="gallery-card-body">
-              <h6 class="gallery-card-title">Peringatan Maulid Nabi Muhammad SAW</h6>
-            </div>
-          </div>
-        </div>
+    <div class="debug-section">
+      <h3>✅ Cara Testing:</h3>
+      <ol>
+        <li>Buka DevTools (F12)</li>
+        <li>Klik icon "Toggle device toolbar" atau tekan <kbd>Ctrl+Shift+M</kbd></li>
+        <li>Pilih ukuran mobile (max-width: 768px)</li>
+        <li>Tombol "☰ MENU" harus muncul di bagian kanan navigasi</li>
+        <li>Klik tombol untuk membuka menu</li>
+      </ol>
+    </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="gallery-card-wrapper">
-            <div class="gallery-image-container">
-              <img src="assets/img/education/ponpes (20).webp"
-                class="gallery-image"
-                alt="Kajian Malam Bersama Santri"
-                onclick="openImageModal('assets/img/education/ponpes (14).jpeg', 'Kajian Malam Bersama Santri', 'Kajian')">
-            </div>
-            <div class="gallery-card-body">
-              <h6 class="gallery-card-title">Kajian Malam Bersama Santri</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6">
-          <div class="gallery-card-wrapper">
-            <div class="gallery-image-container">
-              <img src="assets/img/education/ponpes (8).webp"
-                class="gallery-image"
-                alt="Kelas Mengaji Harian"
-                onclick="openImageModal('assets/img/education/ponpes (23).jpeg', 'Kelas Mengaji Harian', 'Mengaji')">
-            </div>
-            <div class="gallery-card-body">
-              <h6 class="gallery-card-title">Kelas Mengaji Harian</h6>
-            </div>
-          </div>
-        </div>
+    <div class="debug-section">
+      <h3>🔍 Element Status Checker</h3>
+      <button class="test-btn" onclick="checkElementStatus()">Check Status</button>
+      <div id="statusOutput" style="background: white; padding: 15px; margin-top: 10px; border-radius: 4px; display: none;">
+        <h4>Status Report:</h4>
+        <pre id="statusText"></pre>
       </div>
     </div>
 
-    <!-- Modal untuk menampilkan gambar besar -->
-    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
-      <div class="image-modal-content" onclick="event.stopPropagation()">
-        <button class="close-btn" onclick="closeImageModal()">&times;</button>
-        <img id="modalImage" src="" alt="Gambar Besar">
-        <div class="image-modal-text">
-          <h4 id="modalTitle"></h4>
-          <p id="modalCategory"></p>
-        </div>
-      </div>
+    <div class="debug-section">
+      <h3>🧪 Test Manual Functions</h3>
+      <button class="test-btn" onclick="openMobileMenu()">Buka Menu (Test)</button>
+      <button class="test-btn" onclick="closeMobileMenu()">Tutup Menu (Test)</button>
+    </div>
+
+    <div class="debug-section">
+      <h3>📝 Informasi Browser</h3>
+      <p><strong>Viewport Width:</strong> <span id="vpWidth">-</span>px</p>
+      <p><strong>Viewport Height:</strong> <span id="vpHeight">-</span>px</p>
+      <p><strong>Should Show Button:</strong> <span id="shouldShow">-</span></p>
+    </div>
+
+    <div class="debug-section">
+      <h3>📌 Checklist</h3>
+      <ul>
+        <li>☑️ Tombol MENU terlihat saat mobile (< 768px)?</li>
+        <li>☑️ Tombol dapat diklik?</li>
+        <li>☑️ Menu overlay muncul setelah klik?</li>
+        <li>☑️ Dapat menutup menu dengan tombol X?</li>
+        <li>☑️ Menu tertutup saat klik item?</li>
+      </ul>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer id="footer" class="footer pt-5" style="background-color:#004d3c; color:white; margin:0; padding:0; overflow:hidden;">
-    <div class="container">
-      <div class="row gy-4 align-items-stretch">
-        <!-- Kolom Kiri: Logo & Sosial Media -->
-        <div class="col-lg-6 col-md-12 d-flex flex-column align-items-center text-center">
-          <img src="assets/img/ponpes.png" alt="Logo" style="height:90px; margin-bottom:10px;">
-          <h4 class="fw-bold mb-3 text-uppercase text-white">
-            PONDOK PESANTREN <br> SUROJAN MUNIRO
-          </h4>
-          <div class="social-links d-flex gap-3 justify-content-center">
-            <a href="https://www.facebook.com/Sirojanmuniroassalam" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
-            <a href="https://www.instagram.com/sirojanmuniro_assalam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-          </div>
-        </div>
-
-        <!-- Kolom Kanan: Lokasi / Maps -->
-        <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
-          <h5 class="mb-3 fw-semibold text-white text-center text-lg-start">📍 Lokasi Pondok</h5>
-          <div class="map-container" style="width:100%; height:100%; min-height:220px; border-radius:8px; overflow:hidden;">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d395.06453246942604!2d112.681!3d-8.0725068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd627bef4d003e5%3A0xdd0f4efe70debf25!2sPondok+Pesantren+Sirojan+Muniro+As-Salam!5e0!3m2!1sid!2sid!4v1699999999999"
-              style="width:100%; height:100%; border:0;"
-              allowfullscreen=""
-              loading="lazy">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>
-        © 2025 <strong>Pondok Pesantren Sirojan Muniro As-Salam Reborn</strong>. All rights reserved.
-        <br>
-        Dibangun dengan <span class="heart">❤</span> oleh
-        <a href="https://azkaindiesatu.id/" target="_blank" class="footer-link">AIS</a>
-      </p>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- Gallery JS File -->
-  <script src="assets/js/gallery.js"></script>
-
-  <!-- MOBILE MENU JS -->
   <script>
-    // Buka Mobile Menu
+    // Open Mobile Menu
     function openMobileMenu() {
-      console.log("Opening mobile menu...");
+      console.log("🔓 Opening menu...");
       const overlay = document.getElementById('mobileMenuOverlay');
       if (overlay) {
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
-        console.log("Mobile menu opened");
+        console.log("✅ Menu opened successfully");
       } else {
-        console.error("Mobile menu overlay not found");
+        console.error("❌ Overlay element not found");
       }
     }
 
-    // Tutup Mobile Menu
+    // Close Mobile Menu
     function closeMobileMenu(event) {
       if (event && event.target !== document.getElementById('mobileMenuOverlay')) {
         return;
       }
-
-      console.log("Closing mobile menu...");
+      console.log("🔒 Closing menu...");
       const overlay = document.getElementById('mobileMenuOverlay');
       if (overlay) {
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
+        console.log("✅ Menu closed successfully");
       }
     }
 
-    // Initialize menu interactions
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log("DOM loaded, initializing mobile menu...");
+    // Check Element Status
+    function checkElementStatus() {
+      const menuBtn = document.getElementById('menuBtn');
+      const overlay = document.getElementById('mobileMenuOverlay');
+      
+      const menuBtnStyle = window.getComputedStyle(menuBtn);
+      const overlayStyle = window.getComputedStyle(overlay);
 
-      // Close menu when clicking menu links
-      const menuLinks = document.querySelectorAll('.mobile-menu-items a');
-      menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          console.log("Menu link clicked, closing menu");
-          closeMobileMenu();
-        });
-      });
+      const status = `
+Menu Button:
+- Display: ${menuBtnStyle.display}
+- Visibility: ${menuBtnStyle.visibility}
+- Z-index: ${menuBtnStyle.zIndex}
+- Position: ${menuBtnStyle.position}
+- Opacity: ${menuBtnStyle.opacity}
 
-      // Close menu on ESC key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          closeMobileMenu();
-        }
-      });
+Overlay:
+- Display: ${overlayStyle.display}
+- Z-index: ${overlayStyle.zIndex}
+- Position: ${overlayStyle.position}
 
-      console.log("Mobile menu initialization complete");
+Window Width: ${window.innerWidth}px
+Window Height: ${window.innerHeight}px
+      `;
+
+      document.getElementById('statusOutput').style.display = 'block';
+      document.getElementById('statusText').textContent = status;
+      console.log(status);
+    }
+
+    // Update viewport info
+    function updateViewportInfo() {
+      document.getElementById('vpWidth').textContent = window.innerWidth;
+      document.getElementById('vpHeight').textContent = window.innerHeight;
+      document.getElementById('shouldShow').textContent = 
+        window.innerWidth <= 768 ? 'YES (width <= 768px)' : 'NO (width > 768px)';
+    }
+
+    // Initialize
+    window.addEventListener('load', function() {
+      updateViewportInfo();
+      console.log("✅ Page loaded and initialized");
     });
+
+    window.addEventListener('resize', updateViewportInfo);
   </script>
 
 </body>
