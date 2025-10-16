@@ -11805,6 +11805,78 @@ body {
   }
 }
 
+.mobile-menu-overlay {
+  background: rgba(0, 0, 0, 0.8); /* buat transparan gelap */
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  display: none; /* sembunyikan saat tidak aktif */
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-menu-overlay.active {
+  display: flex; /* tampilkan saat tombol menu ditekan */
+}
+
+/* jika kamu ingin hapus total background putihnya, gunakan ini */
+.mobile-menu-overlay {
+  background: transparent !important;
+}
+
+/* --- Sembunyikan tombol Menu di desktop --- */
+.mobile-menu-btn {
+  display: none;
+}
+
+/* --- Tampilkan tombol Menu hanya di layar kecil --- */
+@media (max-width: 991px) {
+  .mobile-menu-btn {
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+
+  /* Sembunyikan menu navigasi desktop di mobile */
+  .navmenu {
+    display: none;
+  }
+
+  /* Saat mobile menu aktif */
+  .mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .mobile-menu-overlay.active {
+    display: flex;
+  }
+
+  .mobile-menu-overlay a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 10px 0;
+  }
+}
 
 
 
