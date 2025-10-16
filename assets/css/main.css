@@ -9598,18 +9598,19 @@ body {
     color: #facc15 !important;
     font-size: 16px !important;
     font-weight: bold !important;
-    padding: 8px 12px !important;
+    padding: 8px 0 !important;
+    width: 100% !important;
+    text-align: center !important;
     cursor: pointer !important;
+    border-bottom: 2px solid #facc15 !important;
     transition: all 0.3s ease !important;
-    z-index: 10001 !important;
-    position: relative !important;
   }
 
   .mobile-menu-btn:hover {
     background-color: rgba(255, 204, 21, 0.1) !important;
   }
 
-  /* Mobile Menu Overlay - PENTING */
+  /* Mobile Menu Overlay */
   .mobile-menu-overlay {
     position: fixed !important;
     top: 0 !important;
@@ -9619,33 +9620,26 @@ body {
     background: rgba(0, 0, 0, 0.8) !important;
     z-index: 9999 !important;
     display: none !important;
-    align-items: flex-start !important;
-    justify-content: flex-end !important;
   }
 
   .mobile-menu-overlay.active {
-    display: flex !important;
+    display: block !important;
   }
 
   .mobile-menu-content {
-    position: relative !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important; /* pindah ke kanan */
     width: 280px !important;
-    height: 100vh !important;
+    height: 100% !important;
     background: #065f46 !important;
+    transform: translateX(100%) !important; /* sembunyi ke kanan */
+    transition: transform 0.3s ease !important;
     overflow-y: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    z-index: 10000 !important;
-    animation: slideFromRight 0.3s ease !important;
   }
 
-  @keyframes slideFromRight {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+  .mobile-menu-overlay.active .mobile-menu-content {
+    transform: translateX(0) !important; /* muncul ke layar */
   }
 
   /* Mobile Menu Header */
@@ -9656,14 +9650,12 @@ body {
     justify-content: space-between !important;
     align-items: center !important;
     border-bottom: 1px solid #065f46 !important;
-    flex-shrink: 0 !important;
   }
 
   .mobile-menu-title {
     color: #facc15 !important;
     font-weight: bold !important;
     font-size: 16px !important;
-    margin: 0 !important;
   }
 
   .mobile-menu-close {
@@ -9673,25 +9665,11 @@ body {
     font-size: 20px !important;
     cursor: pointer !important;
     padding: 5px !important;
-    width: 30px !important;
-    height: 30px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .mobile-menu-close:hover {
-    color: #fff !important;
   }
 
   /* Mobile Menu Items */
   .mobile-menu-items {
     padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    flex: 1 !important;
-    margin: 0 !important;
-    list-style: none !important;
   }
 
   .mobile-menu-items a {
@@ -9702,7 +9680,6 @@ body {
     border-bottom: 1px solid #047857 !important;
     font-size: 14px !important;
     transition: background-color 0.3s ease !important;
-    margin: 0 !important;
   }
 
   .mobile-menu-items a:hover,
@@ -9715,7 +9692,7 @@ body {
     color: #facc15 !important;
     font-weight: bold !important;
   }
-}
+
   /* Mobile Dropdown */
   .mobile-dropdown {
     background: #065f46 !important;
@@ -9748,6 +9725,7 @@ body {
     padding-left: 35px !important;
     background-color: #047857 !important;
   }
+}
 
 /* Header Styles */
 #header {
