@@ -5,8 +5,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Gallery - MySchool Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -31,6 +29,150 @@
 
   <!-- Gallery Custom CSS -->
   <link href="assets/css/gallery.css" rel="stylesheet">
+
+  <!-- MOBILE MENU FIX CSS -->
+  <style>
+    /* ===== RESET Z-INDEX CONFLICTS ===== */
+    header {
+      z-index: 100 !important;
+    }
+
+    .nav-header {
+      position: relative;
+      z-index: 101 !important;
+    }
+
+    /* ===== MOBILE MENU BUTTON ===== */
+    .mobile-menu-btn {
+      display: none !important;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px 15px;
+      z-index: 1100 !important;
+      position: relative;
+    }
+
+    .mobile-menu-btn:focus {
+      outline: none;
+    }
+
+    /* ===== SHOW BUTTON ON MOBILE ===== */
+    @media (max-width: 992px) {
+      .mobile-menu-btn {
+        display: block !important;
+      }
+
+      .navmenu {
+        display: none !important;
+      }
+    }
+
+    /* ===== MOBILE MENU OVERLAY ===== */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1099 !important;
+      display: none;
+    }
+
+    .mobile-menu-overlay.active {
+      display: flex !important;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    /* ===== MOBILE MENU CONTENT ===== */
+    .mobile-menu-content {
+      background-color: #065f46;
+      width: 280px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+      z-index: 1100 !important;
+    }
+
+    /* ===== MOBILE MENU HEADER ===== */
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: #004d3c;
+    }
+
+    .mobile-menu-title {
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .mobile-menu-close:hover {
+      transform: scale(1.2);
+    }
+
+    /* ===== MOBILE MENU ITEMS ===== */
+    .mobile-menu-items {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      flex: 1;
+    }
+
+    .mobile-menu-items a {
+      color: white;
+      text-decoration: none;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .mobile-menu-items a:hover,
+    .mobile-menu-items a.active {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding-left: 30px;
+    }
+
+    /* ===== HIDE DESKTOP MENU ON MOBILE ===== */
+    @media (max-width: 992px) {
+      .navmenu {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 993px) {
+      .mobile-menu-btn,
+      .mobile-menu-overlay {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="gallery-page">
@@ -43,7 +185,7 @@
         <img src="assets/img/ponpes.png" alt="Logo" class="me-2" style="height:90px;">
         <h2 class="mb-0 text-white">PONDOK PESANTREN<br><strong>SIROJAN MUNIRO</strong></h2>
       </div>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" style="flex: 1; justify-content: flex-end;">
         <div class="me-4 text-white small">
           <strong>CONTACT US</strong><br>
           Tlp: <a href="tel:081329039527" class="text-white">081329039527</a>
@@ -52,16 +194,16 @@
           <strong>E-MAIL</strong><br>
           <a href="mailto:sirojanmuniroassalam@gmail.com" class="text-white">sirojanmuniroassalam@gmail.com</a>
         </div>
-        <div class="social-links">
+        <div class="social-links" style="display: none;">
           <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA"><i class="bi bi-youtube text-white fs-5 me-2"></i></a>
           <a href="https://www.facebook.com/Sirojanmuniroassalam"><i class="bi bi-facebook text-white fs-5 me-2"></i></a>
           <a href="https://www.instagram.com/sirojanmuniro_assalam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram text-white fs-5"></i></a>
         </div>
       </div>
     </div>
-    
+
     <!-- Baris Menu -->
-    <div class="nav-header">
+    <div class="nav-header d-flex justify-content-between align-items-center">
       <!-- Desktop Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -73,9 +215,9 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      
+
       <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" onclick="openMobileMenu()">
+      <button class="mobile-menu-btn" onclick="openMobileMenu()" type="button">
         ≡ Menu
       </button>
     </div>
@@ -87,9 +229,9 @@
       <!-- Menu Header -->
       <div class="mobile-menu-header">
         <span class="mobile-menu-title">Menu Navigasi</span>
-        <button class="mobile-menu-close" onclick="closeMobileMenu()">&times;</button>
+        <button class="mobile-menu-close" onclick="closeMobileMenu()" type="button">&times;</button>
       </div>
-      
+
       <!-- Menu Items -->
       <div class="mobile-menu-items">
         <a href="index.html">Home</a>
@@ -109,7 +251,6 @@
 
   <!-- Main Content -->
   <main class="main">
-
     <!-- Page Title -->
     <div class="container py-5">
       <h2 class="mb-4 text-center">Galeri Foto</h2>
@@ -119,10 +260,10 @@
         <div class="col-md-4 col-sm-6">
           <div class="gallery-card-wrapper">
             <div class="gallery-image-container">
-              <img src="assets/img/education/ponpes (16).webp" 
-                   class="gallery-image" 
-                   alt="Peringatan Maulid Nabi Muhammad SAW"
-                   onclick="openImageModal('assets/img/education/ponpes (16).jpeg', 'Peringatan Maulid Nabi Muhammad SAW', 'Kegiatan Hari Besar Islam (PHBI)')">
+              <img src="assets/img/education/ponpes (16).webp"
+                class="gallery-image"
+                alt="Peringatan Maulid Nabi Muhammad SAW"
+                onclick="openImageModal('assets/img/education/ponpes (16).jpeg', 'Peringatan Maulid Nabi Muhammad SAW', 'Kegiatan Hari Besar Islam (PHBI)')">
             </div>
             <div class="gallery-card-body">
               <h6 class="gallery-card-title">Peringatan Maulid Nabi Muhammad SAW</h6>
@@ -133,10 +274,10 @@
         <div class="col-md-4 col-sm-6">
           <div class="gallery-card-wrapper">
             <div class="gallery-image-container">
-              <img src="assets/img/education/ponpes (20).webp" 
-                   class="gallery-image" 
-                   alt="Kajian Malam Bersama Santri"
-                   onclick="openImageModal('assets/img/education/ponpes (14).jpeg', 'Kajian Malam Bersama Santri', 'Kajian')">
+              <img src="assets/img/education/ponpes (20).webp"
+                class="gallery-image"
+                alt="Kajian Malam Bersama Santri"
+                onclick="openImageModal('assets/img/education/ponpes (14).jpeg', 'Kajian Malam Bersama Santri', 'Kajian')">
             </div>
             <div class="gallery-card-body">
               <h6 class="gallery-card-title">Kajian Malam Bersama Santri</h6>
@@ -147,10 +288,10 @@
         <div class="col-md-4 col-sm-6">
           <div class="gallery-card-wrapper">
             <div class="gallery-image-container">
-              <img src="assets/img/education/ponpes (8).webp" 
-                   class="gallery-image" 
-                   alt="Kelas Mengaji Harian"
-                   onclick="openImageModal('assets/img/education/ponpes (23).jpeg', 'Kelas Mengaji Harian', 'Mengaji')">
+              <img src="assets/img/education/ponpes (8).webp"
+                class="gallery-image"
+                alt="Kelas Mengaji Harian"
+                onclick="openImageModal('assets/img/education/ponpes (23).jpeg', 'Kelas Mengaji Harian', 'Mengaji')">
             </div>
             <div class="gallery-card-body">
               <h6 class="gallery-card-title">Kelas Mengaji Harian</h6>
@@ -171,25 +312,18 @@
         </div>
       </div>
     </div>
-
   </main>
 
   <!-- Footer -->
   <footer id="footer" class="footer pt-5" style="background-color:#004d3c; color:white; margin:0; padding:0; overflow:hidden;">
     <div class="container">
       <div class="row gy-4 align-items-stretch">
-
         <!-- Kolom Kiri: Logo & Sosial Media -->
         <div class="col-lg-6 col-md-12 d-flex flex-column align-items-center text-center">
-          <!-- Logo di atas -->
           <img src="assets/img/ponpes.png" alt="Logo" style="height:90px; margin-bottom:10px;">
-
-          <!-- Tulisan Pondok di bawah logo -->
           <h4 class="fw-bold mb-3 text-uppercase text-white">
             PONDOK PESANTREN <br> SUROJAN MUNIRO
           </h4>
-
-          <!-- Sosial Media -->
           <div class="social-links d-flex gap-3 justify-content-center">
             <a href="https://www.facebook.com/Sirojanmuniroassalam" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
             <a href="https://www.youtube.com/channel/UChBvBOlAoq2YFPdHjWnSjNA" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
@@ -201,7 +335,7 @@
         <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
           <h5 class="mb-3 fw-semibold text-white text-center text-lg-start">📍 Lokasi Pondok</h5>
           <div class="map-container" style="width:100%; height:100%; min-height:220px; border-radius:8px; overflow:hidden;">
-            <iframe 
+            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d395.06453246942604!2d112.681!3d-8.0725068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd627bef4d003e5%3A0xdd0f4efe70debf25!2sPondok+Pesantren+Sirojan+Muniro+As-Salam!5e0!3m2!1sid!2sid!4v1699999999999"
               style="width:100%; height:100%; border:0;"
               allowfullscreen=""
@@ -217,7 +351,7 @@
       <p>
         © 2025 <strong>Pondok Pesantren Sirojan Muniro As-Salam Reborn</strong>. All rights reserved.
         <br>
-        Dibangun dengan <span class="heart">❤</span> oleh 
+        Dibangun dengan <span class="heart">❤</span> oleh
         <a href="https://azkaindiesatu.id/" target="_blank" class="footer-link">AIS</a>
       </p>
     </div>
@@ -241,6 +375,59 @@
 
   <!-- Gallery JS File -->
   <script src="assets/js/gallery.js"></script>
+
+  <!-- MOBILE MENU JS -->
+  <script>
+    // Buka Mobile Menu
+    function openMobileMenu() {
+      console.log("Opening mobile menu...");
+      const overlay = document.getElementById('mobileMenuOverlay');
+      if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        console.log("Mobile menu opened");
+      } else {
+        console.error("Mobile menu overlay not found");
+      }
+    }
+
+    // Tutup Mobile Menu
+    function closeMobileMenu(event) {
+      if (event && event.target !== document.getElementById('mobileMenuOverlay')) {
+        return;
+      }
+
+      console.log("Closing mobile menu...");
+      const overlay = document.getElementById('mobileMenuOverlay');
+      if (overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Initialize menu interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOM loaded, initializing mobile menu...");
+
+      // Close menu when clicking menu links
+      const menuLinks = document.querySelectorAll('.mobile-menu-items a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          console.log("Menu link clicked, closing menu");
+          closeMobileMenu();
+        });
+      });
+
+      // Close menu on ESC key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeMobileMenu();
+        }
+      });
+
+      console.log("Mobile menu initialization complete");
+    });
+  </script>
 
 </body>
 </html>
