@@ -9574,23 +9574,13 @@ body {
   }
 }
 
-/* Mobile Hamburger Menu Button - Hidden by default */
-.mobile-menu-btn {
-  display: none;
-}
-
-.mobile-menu-overlay {
-  display: none;
-}
-
-/* Media Queries untuk Mobile */
 @media (max-width: 991px) {
   /* Hide original menu di mobile */
   .navmenu {
     display: none !important;
   }
 
-  /* Show mobile hamburger button */
+  /* Tombol Menu Mobile */
   .mobile-menu-btn {
     display: block !important;
     background: transparent !important;
@@ -9626,23 +9616,24 @@ body {
     display: block !important;
   }
 
+  /* 🔹 Perbaikan utama: menu muncul dari kiri, bukan kanan */
   .mobile-menu-content {
     position: absolute !important;
     top: 0 !important;
-    right: 0 !important; /* pindah ke kanan */
+    left: 0 !important; /* ubah dari right ke left */
     width: 280px !important;
     height: 100% !important;
     background: #065f46 !important;
-    transform: translateX(100%) !important; /* sembunyi ke kanan */
+    transform: translateX(-100%) !important; /* ubah arah slide */
     transition: transform 0.3s ease !important;
     overflow-y: auto !important;
   }
 
   .mobile-menu-overlay.active .mobile-menu-content {
-    transform: translateX(0) !important; /* muncul ke layar */
+    transform: translateX(0) !important; /* muncul ke layar dari kiri */
   }
 
-  /* Mobile Menu Header */
+  /* Header menu mobile */
   .mobile-menu-header {
     background: #047857 !important;
     padding: 15px !important;
@@ -9667,7 +9658,6 @@ body {
     padding: 5px !important;
   }
 
-  /* Mobile Menu Items */
   .mobile-menu-items {
     padding: 0 !important;
   }
@@ -9693,7 +9683,7 @@ body {
     font-weight: bold !important;
   }
 
-  /* Mobile Dropdown */
+  /* Dropdown */
   .mobile-dropdown {
     background: #065f46 !important;
   }
@@ -9725,192 +9715,6 @@ body {
     padding-left: 35px !important;
     background-color: #047857 !important;
   }
-}
-
-/* Header Styles */
-#header {
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
-  padding: 0;
-}
-
-.top-header {
-  padding: 15px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.nav-header {
-  padding: 10px 20px;
-}
-
-/* Desktop Menu */
-.navmenu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.navmenu li {
-  margin-right: 30px;
-}
-
-.navmenu a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-  transition: color 0.3s;
-}
-
-.navmenu a:hover,
-.navmenu a.active {
-  color: #ffeb3b;
-}
-
-.navmenu .psb {
-  background: #ff9800;
-  padding: 8px 20px;
-  border-radius: 25px;
-  color: white !important;
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.mobile-menu-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* Mobile Menu Overlay */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-menu-content {
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
-  width: 280px;
-  height: 100%;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  overflow-y: auto;
-}
-
-.mobile-menu-overlay.active .mobile-menu-content {
-  transform: translateX(0);
-}
-
-.mobile-menu-header {
-  padding: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mobile-menu-title {
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.mobile-menu-close {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 5px;
-  line-height: 1;
-}
-
-.mobile-menu-items {
-  padding: 0;
-}
-
-.mobile-menu-items a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 15px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background 0.3s;
-}
-
-.mobile-menu-items a:hover,
-.mobile-menu-items a.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffeb3b;
-}
-
-.mobile-menu-items a.psb {
-  background: #ff9800;
-  margin: 10px 20px;
-  border-radius: 25px;
-  text-align: center;
-  border-bottom: none;
-}
-
-/* Mobile Dropdown */
-.mobile-dropdown {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobile-dropdown-header {
-  padding: 15px 20px;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s;
-}
-
-.mobile-dropdown-header:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.mobile-dropdown-content {
-  max-height: 0;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.2);
-  transition: max-height 0.3s ease;
-}
-
-.mobile-dropdown-content.active {
-  max-height: 200px;
-}
-
-.mobile-dropdown-content a {
-  padding: 12px 40px;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.mobile-dropdown-content a:last-child {
-  border-bottom: none;
 }
 
 /* Social Links */
